@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oaksworn | Alliance guild, WoW Forever</title>
+<meta name="description" content="Oaksworn is a friendly Alliance guild in World of Warcraft: Forever, built around open-world PvP and themed events.">
+<meta property="og:title" content="Oaksworn">
+<meta property="og:description" content="Sworn to the grove. Sworn to each other. An Alliance guild in WoW Forever.">
+<meta property="og:image" content="bg.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B0%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --ink: #eef1fb;
+    --soft: #c3c9e6;
+    --glow: #7fb2ff;
+    --card: rgba(10, 14, 36, 0.62);
+    --line: rgba(160, 190, 255, 0.22);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    font-family: Georgia, "Palatino Linotype", Palatino, "Book Antiqua", serif;
+    line-height: 1.65;
+    background: #070a1c;
+  }
+  /* Slightly blurred full-page background image */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -20px;
+    z-index: -2;
+    background: url("bg.jpg") center / cover no-repeat;
+    filter: blur(3px) saturate(1.05);
+  }
+  /* Dark wash so text stays readable */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(ellipse at 50% 35%, rgba(7,10,28,0), rgba(7,10,28,0.45) 75%),
+      linear-gradient(to bottom, rgba(7,10,28,0.1), rgba(7,10,28,0.55));
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 22px; }
+
+  header.hero {
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 22px 40px;
+  }
+  .eyebrow {
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--soft);
+    margin: 0 0 14px;
+  }
+  h1 {
+    font-size: clamp(3rem, 12vw, 7rem);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 400;
+    text-shadow: 0 0 40px rgba(127,178,255,0.55), 0 2px 24px rgba(0,0,0,0.6);
+  }
+  .tagline {
+    font-style: italic;
+    font-size: clamp(1.05rem, 2.6vw, 1.4rem);
+    color: var(--soft);
+    margin: 14px 0 34px;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+  }
+  .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid var(--glow);
+    border-radius: 999px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    background: rgba(127,178,255,0.12);
+    transition: background .2s, box-shadow .2s;
+  }
+  .btn:hover { background: rgba(127,178,255,0.28); box-shadow: 0 0 24px rgba(127,178,255,0.4); }
+
+  section { padding: 34px 0; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px 30px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  h2 {
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 1.15rem;
+    margin: 0 0 14px;
+    color: var(--glow);
+  }
+  p { margin: 0 0 12px; }
+  ul { margin: 0; padding-left: 20px; }
+  li { margin: 6px 0; }
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .rank { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+  .rank:last-child { border-bottom: 0; }
+  .rank b { font-weight: 400; letter-spacing: 0.05em; }
+  .rank span { color: var(--soft); font-size: 0.95rem; text-align: right; }
+  .pill {
+    display: inline-block; margin: 4px 6px 0 0; padding: 3px 12px;
+    border: 1px solid var(--line); border-radius: 999px;
+    font-size: 0.82rem; color: var(--soft);
+  }
+  footer {
+    text-align: center; color: var(--soft); font-size: 0.8rem;
+    padding: 46px 22px 40px; opacity: 0.85;
+  }
+  @media (max-width: 560px) {
+    .card { padding: 22px 20px; }
+    .rank { flex-direction: column; gap: 0; }
+    .rank span { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="eyebrow">Alliance &middot; World of Warcraft: Forever</p>
+  <h1>Oaksworn</h1>
+  <p class="tagline">Sworn to the grove. Sworn to each other.</p>
+  <a class="btn" href="#join">Join the grove</a>
+</header>
+
+<main class="wrap">
+
+  <section id="about">
+    <div class="card">
+      <h2>Who we are</h2>
+      <p>Oaksworn is a friendly Alliance guild built for open-world PvP and good company. We take the fights seriously and ourselves lightly, with a touch of fantasy flavor and none of the hardcore roleplay.</p>
+      <p>Our endgame is the open world: holding fronts, defending keeps, and ambushing the other side on the road.</p>
+      <span class="pill">World PvP</span><span class="pill">Themed events</span><span class="pill">No voice chat</span><span class="pill">Drama free</span>
+    </div>
+  </section>
+
+  <section id="code">
+    <div class="grid">
+      <div class="card">
+        <h2>The Oath</h2>
+        <ul>
+          <li>No jerks. Treat everyone, friend or foe, decently.</li>
+          <li>No obnoxious names. Fantasy is welcome, trolling is not.</li>
+          <li>Text only. Voice chat is never required.</li>
+          <li>Show up when you can. Nobody takes attendance.</li>
+          <li>Settle disputes privately with an officer.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>The Campaign</h2>
+        <p>We fight for control of the open world with the <b>Overlord Forever</b> addon, which every member installs.</p>
+        <ul>
+          <li>Weekly front pushes</li>
+          <li>Keep and outpost defense</li>
+          <li>Monthly themed nights</li>
+          <li>Occasional roleplay moots, always optional</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="ranks">
+    <div class="card">
+      <h2>The Order</h2>
+      <div class="rank"><b>Warden</b><span>Guild leader</span></div>
+      <div class="rank"><b>Elder</b><span>Deputy leader</span></div>
+      <div class="rank"><b>Grove Protectors</b><span>Officers and the main fighting force</span></div>
+      <div class="rank"><b>Oakbearer</b><span>Core members</span></div>
+      <div class="rank"><b>Sapling</b><span>Regular members</span></div>
+      <div class="rank"><b>Acorn</b><span>New recruits on a two-week trial</span></div>
+    </div>
+  </section>
+
+  <section id="divisions">
+    <div class="grid">
+      <div class="card">
+        <h2>Grove Protectors</h2>
+        <p>The shield of the guild. They lead pushes, hold keeps, and keep the grove safe.</p>
+      </div>
+      <div class="card">
+        <h2>The Nightshades</h2>
+        <p>Scouts, ambushers, and saboteurs. They watch the roads, pick off healers, and report what is coming.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="card">
+      <h2>Join the grove</h2>
+      <p>New to the guild or just curious? Whisper any Warden, Elder, or Grove Protector in game, or ask in guild chat. Tell us your class, how you like to play, and when you are usually online.</p>
+      <p>Install the <b>Overlord Forever</b> addon before your first push, and you are ready.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Oaksworn is a fan guild and is not affiliated with Blizzard Entertainment.<br>
+  World of Warcraft and related art are &copy; Blizzard Entertainment, Inc.
+</footer>
+
+</body>
+</html>

@@ -9,31 +9,59 @@
 <meta property="og:image" content="bg.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B0%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
+<style>
+.lead{margin:0 0 12px;color:var(--ink);text-align:center}
+.req{margin:0 0 8px;text-align:center;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+.points,.duties{list-style:none;margin:0;padding:0}
+.points{border-top:1px solid var(--line);padding-top:8px}
+.points li{position:relative;margin:0;padding:6px 0 6px 22px;line-height:1.45}
+.points li::before{content:"";position:absolute;left:2px;top:14px;width:7px;height:7px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
+.duties{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.duties li{margin:0;padding:4px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(127,214,154,.08)}
+.fine{margin:10px 0 0;font-size:.82rem;font-style:italic;color:var(--soft);text-align:center}
+</style>
 </head>
 <body class="bg-ranks">
 <nav><a href="index.html">About</a><a href="oath.html">The Oath</a><a href="ranks.html" class=on>Ranks and Divisions</a><a href="coppicing.html">Coppicing</a><a href="history.html">Our History</a><a href="archives.html">From the Archives</a></nav>
 <header class="hero small"><h1>Ranks and Divisions</h1></header>
 <main class="wrap">
 <section id="ranks">
-<div class="tier"><p class="tier-label"></p>
-  <div class="card"><h2>The Wardens</h2>
-  <p>The Oaksworn leadership. Required to lead events, recruit members, and perform the coppicing.</p></div></div>
+<div class="tier"><div class="card"><h2>The Wardens</h2>
+<p class="lead">The Oaksworn leadership.</p>
+<p class="req">Required to:</p>
+<ul class="duties">
+<li>Lead events</li>
+<li>Recruit members</li>
+<li>Perform the coppicing</li>
+</ul></div></div>
 
-<div class="tier"><p class="tier-label"></p>
-  <div class="grid">
-    <div class="card"><h2>The Grove Protectors</h2>
-    <p>The vanguard of the Oaksworn defenses. This is our primary fighting force, tasked with offensive maneuvers and holding keeps.</p></div>
-    <div class="card"><h2>The Nightshades</h2>
-    <p>The guerrilla division of Oaksworn forces. Espionage, scouting, ambush, and sabotage. (Stealth-only unit, restricted to rogues, druids, and Night Elves.)</p></div>
-    <div class="card"><h2>The Verdant Expedition</h2>
-    <p>The exploration and commercial unit. Those tasked with building the treasury of the Oaksworn (PvE-focused players).</p></div>
-  </div></div>
+<div class="tier"><div class="grid">
+<div class="card"><h2>The Grove Protectors</h2>
+<p class="lead">The vanguard of the Oaksworn defenses.</p>
+<ul class="points">
+<li>Our primary fighting force</li>
+<li>Offensive maneuvers</li>
+<li>Holding keeps</li>
+</ul></div>
+<div class="card"><h2>The Nightshades</h2>
+<p class="lead">The guerrilla division of Oaksworn forces.</p>
+<ul class="points">
+<li>Espionage and scouting</li>
+<li>Ambush and sabotage</li>
+</ul>
+<p class="fine">Stealth-only unit, restricted to rogues, druids, and Night Elves.</p></div>
+<div class="card"><h2>The Verdant Expedition</h2>
+<p class="lead">The exploration and commercial unit.</p>
+<ul class="points">
+<li>Building the treasury of the Oaksworn</li>
+<li>PvE-focused players</li>
+</ul></div>
+</div></div>
 
-<div class="tier"><p class="tier-label"></p>
-  <div class="card"><h2>Initiates</h2>
-  <p>New recruits that have not yet sworn their full oaths.</p></div></div>
+<div class="tier"><div class="card"><h2>Initiates</h2>
+<p class="lead" style="margin:0">New recruits that have not yet sworn their full oaths.</p></div></div>
 
-<div class="card"><p class="note">Any group of Oaksworn may petition the Wardens to begin their own thematic, named unit within our ranks.</p></div>
+<div class="card"><p class="note" style="margin:0;text-align:center">Any group of Oaksworn may petition the Wardens to begin their own thematic, named unit within our ranks.</p></div>
 </section>
 </main>
 <footer>

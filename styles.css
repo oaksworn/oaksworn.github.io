@@ -162,3 +162,6 @@ footer a{color:var(--glow)}
 .gallery figure{margin:0}
 .gallery img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
 .gallery figcaption{font-size:.8rem;color:var(--soft);margin-top:6px}
+
+body.bg-history::before{background:url("bg-history.jpg") center / cover no-repeat;filter:blur(4px) saturate(1.05)}
+body.bg-archives::before{background:url("bg-archives.jpg") center / cover no-repeat;filter:blur(4px) saturate(1.05)}

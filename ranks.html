@@ -11,14 +11,13 @@
 <link rel="stylesheet" href="styles.css">
 <style>
 .lead{margin:0 0 12px;color:var(--ink);text-align:center}
-.req{margin:0 0 8px;text-align:center;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
-.points,.duties{list-style:none;margin:0;padding:0}
-.points{border-top:1px solid var(--line);padding-top:8px;text-align:left}
+.points{list-style:none;margin:0;padding:8px 0 0;border-top:1px solid var(--line);text-align:left}
 .points li{position:relative;margin:0;padding:6px 0 6px 22px;line-height:1.45}
 .points li::before{content:"";position:absolute;left:2px;top:14px;width:7px;height:7px;border-radius:50%;background:var(--glow);box-shadow:0 0 8px var(--glow)}
-.duties{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-.duties li{margin:0;padding:4px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(127,214,154,.08)}
-.fine{margin:10px 0 0;font-size:.82rem;font-style:italic;color:var(--soft);text-align:center}
+/* the three divisions share rows so titles, intros, and bullets line up */
+#ranks .grid{row-gap:0;margin-bottom:-18px}
+#ranks .grid .card{display:grid;grid-template-rows:subgrid;grid-row:span 3;row-gap:0;margin-bottom:18px;align-content:start}
+#ranks .grid .card h2{align-self:start}
 </style>
 </head>
 <body class="bg-ranks">
@@ -27,29 +26,21 @@
 <main class="wrap">
 <section id="ranks">
 <div class="tier"><div class="card"><h2>The Wardens</h2>
-<p class="lead">The Oaksworn leadership.</p>
-<p class="req">Required to:</p>
-<ul class="duties">
-<li>Lead events</li>
-<li>Recruit members</li>
-<li>Perform the coppicing</li>
-</ul></div></div>
+<p class="lead" style="margin:0">The Oaksworn leadership. Required to lead events, recruit members, and perform the coppicing.</p></div></div>
 
 <div class="tier"><div class="grid">
 <div class="card"><h2>The Grove Protectors</h2>
 <p class="lead">The vanguard of the Oaksworn defenses.</p>
 <ul class="points">
 <li>Our primary fighting force</li>
-<li>Offensive maneuvers</li>
-<li>Holding keeps</li>
+<li>Offensive maneuvers and holding keeps</li>
 </ul></div>
 <div class="card"><h2>The Nightshades</h2>
 <p class="lead">The guerrilla division of Oaksworn forces.</p>
 <ul class="points">
-<li>Espionage and scouting</li>
-<li>Ambush and sabotage</li>
-</ul>
-<p class="fine">Stealth-only unit, restricted to rogues, druids, and Night Elves.</p></div>
+<li>Espionage, scouting, ambush, and sabotage</li>
+<li>Stealth-only: restricted to rogues, druids, and Night Elves</li>
+</ul></div>
 <div class="card"><h2>The Verdant Expedition</h2>
 <p class="lead">The exploration and commercial unit.</p>
 <ul class="points">

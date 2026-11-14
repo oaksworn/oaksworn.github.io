@@ -138,3 +138,27 @@
   .welcome p { margin:0; font-size:1.1rem; }
 
   body.home::before { background: url("bg.jpg") center / cover no-repeat; }
+
+
+/* page backgrounds (images from the Blizzard WoW Forever press kit) */
+body.bg-oath::before{background:url("bg-oath.jpg") center / cover no-repeat;filter:blur(4px) saturate(1.05)}
+body.bg-coppicing::before{background:url("bg-coppicing.jpg") center / cover no-repeat;filter:blur(4px) saturate(1.05)}
+body.bg-ranks::before{background:url("bg-ranks.jpg") center / cover no-repeat;filter:blur(4px) saturate(1.05)}
+footer a{color:var(--glow)}
+
+/* dictionary entry */
+.dict-word{font-size:2.2rem;letter-spacing:.04em;margin:0;line-height:1.1}
+.dict-pron{color:var(--soft);margin:4px 0 14px;font-size:1rem}
+.dict-pron span:first-child{font-family:"Lucida Sans Unicode","DejaVu Sans",sans-serif}
+.dict-pron i{margin-left:10px}
+.dict-defs{margin:0 0 14px;padding-left:24px}
+.dict-defs li{margin:8px 0}
+.dict-tag{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--glow);border:1px solid var(--line);border-radius:999px;padding:1px 9px;margin-right:6px}
+.dict-src{font-size:.8rem;color:var(--soft);border-top:1px solid var(--line);padding-top:10px;margin:0}
+.dict-src a{color:var(--glow)}
+
+/* archives gallery */
+.gallery{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.gallery figure{margin:0}
+.gallery img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+.gallery figcaption{font-size:.8rem;color:var(--soft);margin-top:6px}

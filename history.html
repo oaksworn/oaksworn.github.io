@@ -9,6 +9,18 @@
 <meta property="og:image" content="bg.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B0%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
+<style>
+.timeline{list-style:none;margin:26px 0 0;padding:0 0 0 30px;position:relative;text-align:left}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--glow),var(--line))}
+.tl-item{position:relative;margin:0 0 22px;padding:0}
+.tl-item::before{content:"";position:absolute;left:-30px;top:6px;width:12px;height:12px;border-radius:50%;background:#06140b;border:2px solid var(--glow)}
+.tl-item.now::before{background:var(--glow);box-shadow:0 0 14px var(--glow)}
+.tl-date{display:block;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glow)}
+.tl-text{margin:2px 0 0;font-size:1rem}
+.tl-games{margin:6px 0 0}
+.tl-games span{display:inline-block;margin:3px 5px 0 0;padding:1px 9px;border:1px solid var(--line);border-radius:999px;font-size:.72rem;color:var(--soft);background:rgba(127,214,154,.06)}
+.tl-foot{text-align:left;font-size:.78rem;color:var(--soft);margin:26px 0 0;padding-top:12px;border-top:1px solid var(--line)}
+</style>
 </head>
 <body>
 <nav><a href="index.html">Home</a><a href="oath.html">The Oath</a><a href="ranks.html">Ranks</a><a href="coppicing.html">The Coppicing</a><a href="history.html" class=on>History</a></nav>
@@ -16,29 +28,94 @@
 <main class="wrap">
 <section><div class="card" style="text-align:center">
 <h2>The History of the Oaksworn</h2>
-<ul style="text-align:left;list-style:none;padding:0">
-<li><strong>Fall 2026</strong> &mdash; Oaksworn forms an Alliance guild in World of Warcraft: Forever, built around open-world PvP.</li>
-<li><strong>Winter 2023 - Summer 2026</strong> &mdash; Oaksworn bounces around a variety of games together, including WoW (retail), DAoC (Eden), Rust: Awakening, Smite 2, Dune: Awakening, Arc Raiders, Fortnite, Diablo IV, Path of Exile II, Last Epoch, Ashes of Creation, Sea of Thieves, Guild Wars II, and Albion Online.</li>
-<li><strong>May 2022</strong> &mdash; Oaksworn reactivates Emerald Dream (Alliance) guild on WoW (Shadowlands).</li>
-<li><strong>April 2022</strong> &mdash; Oaksworn begins to mix in other games -- Smite, Final Fantasy, Deep Rock Galactic -- more frequently.</li>
-<li><strong>February 2022</strong> &mdash; Oaksworn forms on the first day of Lost Ark early access (NA-East, Karta).</li>
-<li><strong>December 2021</strong> &mdash; Oaksworn forms, in part, on Elder Scrolls Online under the Ebonheart Pact banner (NA-PC).</li>
-<li><strong>November 2021</strong> &mdash; Members explore various games (Age of Empires, Deep Rock Galactic, Final Fantasy, etc.).</li>
-<li><strong>October 2021</strong> &mdash; New World implodes.</li>
-<li><strong>September 2021</strong> &mdash; Oaksworn forms in New World (Ydalir - NA East).</li>
-<li><strong>July 2021</strong> &mdash; Oaksworn forms in New World (closed beta).</li>
-<li><strong>June 2021</strong> &mdash; Oaksworn forms in Crowfall.</li>
-<li><strong>May 2021</strong> &mdash; Oaksworn takes a break from WoW (Shadowlands) and shifts to Sea of Thieves and Deep Rock Galactic.</li>
-<li><strong>March 2020</strong> &mdash; Oaksworn reforms in WoW (Shadowlands).</li>
-<li><strong>January 2019</strong> &mdash; Oaksworn forms up in Phoenix (DAoC free shard).</li>
-<li><strong>August 2018</strong> &mdash; Oaksworn returns to WoW (BFA).</li>
-<li><strong>April 2017</strong> &mdash; Oaksworn moves to Overwatch.</li>
-<li><strong>December 2016</strong> &mdash; Oaksworn forms up in WoW (Legion).</li>
-<li><strong>May 2016</strong> &mdash; Oaksworn officially forms in Uthgard Beta.</li>
-<li><strong>December 2015</strong> &mdash; Oaksworn reforms as a multi-game community.</li>
-<li><strong>2002-2012</strong> &mdash; Oaksworn exists as an informal crew of RL friends playing DAoC, WoW, GW2, FFXIV, and other MMORPGs.<sup><a href="#fn1">*</a></sup></li>
-</ul>
-<p id="fn1" style="text-align:left"><small>* In some early games, the Oaksworn also went by the name &quot;Stormur Vakten&quot;.</small></p>
+<ol class="timeline">
+<li class="tl-item now">
+<span class="tl-date">Fall 2026</span>
+<p class="tl-text">Oaksworn forms an Alliance guild in World of Warcraft: Forever, built around open-world PvP.</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">Winter 2023 – Summer 2026</span>
+<p class="tl-text">Oaksworn bounces around a variety of games together.</p>
+<p class="tl-games"><span>WoW (retail)</span><span>DAoC (Eden)</span><span>Rust: Awakening</span><span>Smite 2</span><span>Dune: Awakening</span><span>Arc Raiders</span><span>Fortnite</span><span>Diablo IV</span><span>Path of Exile II</span><span>Last Epoch</span><span>Ashes of Creation</span><span>Sea of Thieves</span><span>Guild Wars II</span><span>Albion Online</span></p>
+</li>
+<li class="tl-item">
+<span class="tl-date">May 2022</span>
+<p class="tl-text">Oaksworn reactivates the Emerald Dream (Alliance) guild on WoW (Shadowlands).</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">April 2022</span>
+<p class="tl-text">Oaksworn begins to mix in other games more frequently.</p>
+<p class="tl-games"><span>Smite</span><span>Final Fantasy</span><span>Deep Rock Galactic</span></p>
+</li>
+<li class="tl-item">
+<span class="tl-date">February 2022</span>
+<p class="tl-text">Oaksworn forms on the first day of Lost Ark early access (NA-East, Karta).</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">December 2021</span>
+<p class="tl-text">Oaksworn forms, in part, on Elder Scrolls Online under the Ebonheart Pact banner (NA-PC).</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">November 2021</span>
+<p class="tl-text">Members explore various games.</p>
+<p class="tl-games"><span>Age of Empires</span><span>Deep Rock Galactic</span><span>Final Fantasy</span><span>and more</span></p>
+</li>
+<li class="tl-item">
+<span class="tl-date">October 2021</span>
+<p class="tl-text">New World implodes.</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">September 2021</span>
+<p class="tl-text">Oaksworn forms in New World (Ydalir, NA East).</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">July 2021</span>
+<p class="tl-text">Oaksworn forms in New World (closed beta).</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">June 2021</span>
+<p class="tl-text">Oaksworn forms in Crowfall.</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">May 2021</span>
+<p class="tl-text">Oaksworn takes a break from WoW (Shadowlands) and shifts to other games.</p>
+<p class="tl-games"><span>Sea of Thieves</span><span>Deep Rock Galactic</span></p>
+</li>
+<li class="tl-item">
+<span class="tl-date">March 2020</span>
+<p class="tl-text">Oaksworn reforms in WoW (Shadowlands).</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">January 2019</span>
+<p class="tl-text">Oaksworn forms up in Phoenix (DAoC free shard).</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">August 2018</span>
+<p class="tl-text">Oaksworn returns to WoW (BFA).</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">April 2017</span>
+<p class="tl-text">Oaksworn moves to Overwatch.</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">December 2016</span>
+<p class="tl-text">Oaksworn forms up in WoW (Legion).</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">May 2016</span>
+<p class="tl-text">Oaksworn officially forms in Uthgard Beta.</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">December 2015</span>
+<p class="tl-text">Oaksworn reforms as a multi-game community.</p>
+</li>
+<li class="tl-item">
+<span class="tl-date">2002-2012</span>
+<p class="tl-text">Oaksworn exists as an informal crew of real-life friends playing MMORPGs.<sup><a href="#fn1">*</a></sup></p>
+<p class="tl-games"><span>DAoC</span><span>WoW</span><span>GW2</span><span>FFXIV</span><span>and others</span></p>
+</li>
+</ol>
+<p id="fn1" class="tl-foot">* In some early games, the Oaksworn also went by the name &quot;Stormur Vakten&quot;.</p>
 </div></section>
 </main>
 </body>

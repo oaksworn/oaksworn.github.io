@@ -9,6 +9,26 @@
 <meta property="og:image" content="bg.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B3%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
+<style>
+.slideshow{position:relative;max-width:760px;margin:22px auto 0}
+.ss-frame{position:relative;aspect-ratio:4/3;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#030b06;box-shadow:0 0 0 6px rgba(127,214,154,.06),0 18px 50px rgba(0,0,0,.55),0 0 40px rgba(127,214,154,.12)}
+.ss-slide{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility .7s;outline:none}
+.ss-slide.is-active{opacity:1;visibility:visible}
+.ss-slide img{display:block;width:100%;height:100%;object-fit:contain}
+.ss-slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 22px 18px;text-align:left;font-size:.95rem;font-style:italic;color:var(--ink);background:linear-gradient(to top,rgba(3,12,6,.94),rgba(3,12,6,0));opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
+.ss-slide:hover figcaption,.ss-slide:focus figcaption{opacity:1;transform:none}
+.ss-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;padding:0 0 4px;border-radius:50%;border:1px solid var(--glow);background:rgba(6,20,11,.62);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;opacity:0;transition:opacity .25s,background .2s,box-shadow .2s}
+.ss-btn.prev{left:12px}
+.ss-btn.next{right:12px}
+.ss-frame:hover .ss-btn,.ss-btn:focus-visible{opacity:1}
+.ss-btn:hover{background:rgba(127,214,154,.30);box-shadow:0 0 18px rgba(127,214,154,.45)}
+.ss-dots{display:flex;justify-content:center;gap:10px;margin:16px 0 0}
+.ss-dot{width:10px;height:10px;padding:0;border-radius:50%;border:1px solid var(--glow);background:transparent;cursor:pointer;transition:background .2s,box-shadow .2s}
+.ss-dot.on{background:var(--glow);box-shadow:0 0 10px var(--glow)}
+.slideshow.single .ss-btn,.slideshow.single .ss-dots{display:none}
+@media (hover:none){.ss-btn{opacity:1}.ss-slide figcaption{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.ss-slide,.ss-slide figcaption{transition:none}}
+</style>
 </head>
 <body class="bg-archives">
 <nav><a href="index.html">About</a><a href="oath.html">The Oath</a><a href="ranks.html">Ranks and Divisions</a><a href="coppicing.html">Seasonal 'Coppicing'</a><a href="history.html">Our History</a><a href="archives.html" class=on>From the Archives</a></nav>
@@ -17,7 +37,18 @@
 <section><div class="card" style="text-align:center">
 <h2>Screenshots</h2>
 <p>Battles, ambushes, and good company, gathered from across the years.</p>
-<p class="note">The first screenshots are on their way. Check back soon.</p>
+<div class="slideshow" id="slideshow" role="region" aria-roledescription="carousel" aria-label="Guild screenshots">
+<div class="ss-frame">
+<!-- To add a screenshot: upload the image to the repository, then copy a whole figure block below and change the image and caption. -->
+<figure class="ss-slide is-active" tabindex="0">
+<img src="hall_of_thanes_wipe.png" alt="Oaksworn members lying dead on a red carpet in the Hall of Thanes, surrounded by Dark Iron mobs, with a chat bubble reading &quot;now what&quot;">
+<figcaption>Testing the explosives after a successful Hall of Thanes run. 2026-11-24.</figcaption>
+</figure>
+<button class="ss-btn prev" type="button" aria-label="Previous screenshot">&#8249;</button>
+<button class="ss-btn next" type="button" aria-label="Next screenshot">&#8250;</button>
+</div>
+<div class="ss-dots"></div>
+</div>
 </div></section>
 <!-- To add a screenshot: upload the image to the repository, then add a figure inside this grid, e.g.
 <section><div class="gallery">
@@ -29,5 +60,21 @@ Oaksworn is a player guild and is obviously not affiliated with Blizzard Enterta
 World of Warcraft and related art are &copy; Blizzard Entertainment, Inc.<br>
 Background images are from the <a href="https://blizzard.gamespress.com/WoW-Forever-Launch-Press-Kit">Blizzard Press Kit</a>.
 </footer>
+<script>
+(function(){
+var root=document.getElementById('slideshow');if(!root)return;
+var slides=root.querySelectorAll('.ss-slide'),dots=root.querySelector('.ss-dots'),i=0,timer=null;
+if(slides.length<2)root.classList.add('single');
+slides.forEach(function(_,n){var b=document.createElement('button');b.type='button';b.className='ss-dot';b.setAttribute('aria-label','Show screenshot '+(n+1));b.onclick=function(){go(n);};dots.appendChild(b);});
+function go(n){i=(n+slides.length)%slides.length;slides.forEach(function(s,k){s.classList.toggle('is-active',k===i);});for(var k=0;k<dots.children.length;k++)dots.children[k].classList.toggle('on',k===i);}
+function stop(){if(timer){clearInterval(timer);timer=null;}}
+function start(){stop();if(slides.length>1&&!matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(function(){go(i+1);},7000);}
+root.querySelector('.prev').onclick=function(){go(i-1);};
+root.querySelector('.next').onclick=function(){go(i+1);};
+root.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')go(i-1);if(e.key==='ArrowRight')go(i+1);});
+root.addEventListener('mouseenter',stop);root.addEventListener('mouseleave',start);root.addEventListener('focusin',stop);root.addEventListener('focusout',start);
+go(0);start();
+})();
+</script>
 </body>
 </html>
